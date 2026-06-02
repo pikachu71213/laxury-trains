@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #081120;
+  --color-navy-light: #0f1d32;
+  --color-gold: #d4af37;
+  --color-gold-light: #e8c96a;
+  --color-gold-dark: #b8942e;
+  --color-beige: #f8f5ee;
+  --color-beige-dark: #ebe5d8;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-beige font-sans text-navy antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-navy;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+
+  .luxury-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(8, 17, 32, 0.95) 0%,
+      rgba(8, 17, 32, 0.75) 50%,
+      rgba(8, 17, 32, 0.9) 100%
+    );
+  }
+
+  .gold-line {
+    @apply h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+}
